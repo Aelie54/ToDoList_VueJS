@@ -40,15 +40,20 @@ export default {
     add(todo) {
       console.log(todo);
       let error = "format of your data is not accepted";
+      console.log(this.todo.title.length);
       if (
         typeof this.todo.title === "string" &&
-        // this.todo.title > 0 &&
+        //&& typeof this.todo.title.length >= 0 &&
+         this.todo.title !== "" &&
         typeof this.todo.description === "string" &&
-        // this.todo.description > 0 &&
+        //&& typeof this.todo.description.length >= 0 &&
+         this.todo.description !== "" &&
         typeof this.todo.deadline === "string" &&
-        // this.todo.deadline > 0 &&
-        typeof this.todo.comment === "string"
-        // this.todo.comment > 0
+        //&& typeof this.todo.deadline.length >= 0 &&
+         this.todo.deadline !== "" &&
+        typeof this.todo.comment === "string" &&
+        //&& typeof this.todo.comnent.length >= 0
+         this.todo.comment !== ""
       )
       {
         this.list.push(todo);
